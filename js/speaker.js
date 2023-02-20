@@ -15,11 +15,11 @@ export default class Speaker {
 
   play(lang, message) {
     if ("speechSynthesis" in window) {
+      this.speech.lang = lang;
       this.speech.volume = 1; // From 0 to 1
       this.speech.rate = 1; // From 0.1 to 10
       this.speech.pitch = 1; // From 0 to 2
       this.speech.text = message;
-      this.speech.lang = lang;
       this.speech.voice = window.speechSynthesis.getVoices()[0];
 
       window.speechSynthesis.speak(this.speech);

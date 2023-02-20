@@ -46,12 +46,13 @@ body {
 }
 
 header {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0px 0px;
+  align-content: stretch;
+  justify-content: stretch;
   align-items: center;
+  justify-items: stretch;
   height: var(--header-hight);
   background-color: var(--bg-color-header);
   color: var(--font-color-foreground);
@@ -67,7 +68,7 @@ header {
   align-items: stretch;
   justify-items: stretch;
   height: calc(100vh - var(--header-hight) - var(--footer-hight));
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 footer {

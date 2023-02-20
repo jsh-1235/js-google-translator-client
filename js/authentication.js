@@ -21,7 +21,9 @@ export default class Authentication {
     window.gapi.load("client", this.authorize);
 
     document.getElementById("login").addEventListener("click", (e) => {
-      if (e.target.innerText.toLowerCase() === "login") {
+      console.log(e.target.dataset.role);
+
+      if (e.target.dataset.role === "login") {
         this.login();
       } else {
         this.logout();
@@ -49,8 +51,9 @@ export default class Authentication {
       if (cookie) {
         window.gapi.client.setToken({ access_token: cookie });
 
+        document.getElementById("login").dataset.role = "logout";
         document.getElementById("login").classList.add("logout");
-        document.getElementById("login").innerText = "logout";
+        document.getElementById("login").innerText = " logout";
       }
 
       this.writer.getValues(undefined, "A1:Z100", (rows) => {
@@ -93,8 +96,9 @@ export default class Authentication {
 
       document.cookie = `access_token=${response.access_token}; SameSite=None; Secure`;
 
+      document.getElementById("login").dataset.role = "logout";
       document.getElementById("login").classList.add("logout");
-      document.getElementById("login").innerText = "logout";
+      document.getElementById("login").innerText = " logout";
 
       console.log(this.client);
     };
@@ -118,8 +122,9 @@ export default class Authentication {
 
       document.cookie = "access_token=";
 
+      document.getElementById("login").dataset.role = "login";
       document.getElementById("login").classList.remove("logout");
-      document.getElementById("login").innerText = "login";
+      document.getElementById("login").innerText = " login";
     }
   }
 }

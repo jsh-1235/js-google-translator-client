@@ -250,8 +250,8 @@ export default class Writer {
                   <td class="cell" data-lang="zh-CN">${row[1]}</td>
                   <td class="cell" data-lang="en-US">${row[2]}</td>
                   <td class="cell" data-lang="ru-RU">${row[3]}</td>
-                  <td><button id="update" data-index=${index} data-value=${row[0]} class="button">update</button></td>
-                  <td><button id="delete" data-index=${index} class="button">delete</button></td>
+                  <td><button id="update" data-index=${index} data-value=${row[0]} class="button fa-sharp fa-solid fa-pen"></button></td>
+                  <td><button id="delete" data-index=${index} class="button fa-sharp fa-solid fa-trash"></button></td>
                 </tr>`;
       })
       .reduce((a, b) => a + b);
@@ -272,9 +272,9 @@ export default class Writer {
               this.speaker.play(e.target.dataset.lang, e.target.innerText);
             } else {
               if (e.target.dataset.index) {
-                if (e.target.innerText.toLowerCase() === "update") {
+                if (e.target.id === "update") {
                   this.update(e, Number(e.target.dataset.index) + 1);
-                } else if (e.target.innerText.toLowerCase() === "delete") {
+                } else if (e.target.id === "delete") {
                   this.remove(e, Number(e.target.dataset.index));
                 }
               }

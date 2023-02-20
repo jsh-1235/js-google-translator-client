@@ -1,15 +1,15 @@
 :root {
-  --component-font-size: 0.5rem;
-  --component-height: calc(var(--component-font-size) * 4);
-  --component-border-radius: 0px;
+  --component-font-size: 0.8rem;
+  --component-height: calc(32px);
+  --component-border-radius: 4px;
 }
 
 .button {
-  min-width: calc(var(--component-font-size) * 6);
+  min-width: calc(var(--component-font-size) * 2);
   min-height: var(--component-height);
   border: none;
   border-radius: var(--component-border-radius);
-  background-color: #85bb5c;
+  background-color: #0288d1;
   color: white;
   font-size: var(--component-font-size);
   text-transform: uppercase;
@@ -18,18 +18,17 @@
   white-space: nowrap;
   padding: 10px;
   margin: 0px;
-  overflow: hidden;
 }
 
 .button:hover {
-  background-color: #558b2f;
+  background-color: #5eb8ff;
   cursor: pointer;
   transition-property: background-color, cursor;
   transition-duration: 0.5s;
 }
 
 .button:active {
-  background-color: #255d00;
+  background-color: #005b9f;
   transition-property: background-color, cursor;
   transition-duration: 0.5s;
 }
