@@ -33,7 +33,7 @@ document.getElementById("download").addEventListener("click", (e) => {
   console.clear();
 
   downloader.mapping(writer.rows, (result) => {
-    downloader.save("result.csv", result);
+    downloader.save(`result_${Date.now()}.csv`, result);
   });
 });
 
