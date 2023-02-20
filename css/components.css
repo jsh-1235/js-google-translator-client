@@ -1,0 +1,78 @@
+:root {
+  --component-font-size: 0.5rem;
+  --component-height: calc(var(--component-font-size) * 4);
+  --component-border-radius: 0px;
+}
+
+.button {
+  min-width: calc(var(--component-font-size) * 6);
+  min-height: var(--component-height);
+  border: none;
+  border-radius: var(--component-border-radius);
+  background-color: #85bb5c;
+  color: white;
+  font-size: var(--component-font-size);
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: nowrap;
+  padding: 10px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: #558b2f;
+  cursor: pointer;
+  transition-property: background-color, cursor;
+  transition-duration: 0.5s;
+}
+
+.button:active {
+  background-color: #255d00;
+  transition-property: background-color, cursor;
+  transition-duration: 0.5s;
+}
+
+.button:disabled {
+  background-color: #455a64;
+  color: #cfd8dc;
+}
+
+.button.logout {
+  background-color: #ec407a;
+}
+
+.invisible {
+  display: none;
+}
+
+.input, .textarea {
+  align-self: center;
+  min-height: var(--component-height);
+  border: none;
+  border-radius: var(--component-border-radius);
+  font-size: var(--component-font-size);
+  padding: 0px 10px;
+  outline: 1px solid #e0e0e0;
+}
+
+.textarea {
+  min-height: calc(var(--component-height) * 3);
+}
+
+.input:hover, textarea:hover {
+  outline: 1px solid #85bb5c;
+}
+
+.input:focus, textarea:focus {
+  transition-property: outline;
+  transition-duration: 0.5s;
+  outline: 3px solid #85bb5c;
+}
+
+.input:autofill, .input:-webkit-autofill {
+  border: none;
+  -webkit-text-fill-color: #85bb5c;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}

@@ -1,0 +1,73 @@
+main {
+  display: grid;
+  gap: 0px 0px;
+  align-content: stretch;
+  justify-content: stretch;
+  align-items: stretch;
+  justify-items: stretch;
+  align-self: stretch;
+  justify-self: stretch;
+  background-color: var(--bg-color-content);
+  grid-template-rows: auto 1fr;
+}
+
+#menu {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0px 10px;
+  align-content: stretch;
+  justify-content: space-between;
+  align-items: stretch;
+  justify-items: stretch;
+  align-self: stretch;
+  justify-self: stretch;
+  background-color: var(--bg-color-menu);
+  padding: 10px;
+}
+
+#content {
+  display: grid;
+  gap: 0px 0px;
+  align-content: stretch;
+  justify-content: stretch;
+  align-items: start;
+  justify-items: stretch;
+  align-self: stretch;
+  justify-self: stretch;
+  padding: 10px;
+  grid-template-rows: 1fr;
+}
+
+table, th, td {
+  border: 0.5px solid var(--border-color-table);
+  border-collapse: collapse;
+}
+
+th {
+  background-color: var(--bg-color-th);
+  color: var(--font-color-table);
+  color: var(--font-color-th);
+  font-size: var(--font-size-th);
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+td {
+  background-color: var(--bg-color-td);
+  color: var(--font-color-td);
+  font-size: var(--font-size-tr);
+  text-align: center;
+  padding: 10px;
+}
+
+.cell:hover {
+  background-color: #76d275;
+  color: white;
+  transition-property: background-color, color;
+  transition-duration: 0.5s;
+}
+
+.cell:active {
+  background-color: #ffb300;
+  color: white;
+}

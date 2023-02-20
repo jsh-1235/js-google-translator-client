@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <header>
+    <span class="title">Language Translator</span>
+  </header>
+  <div class="wrapper">
+    <main>
+      <section id="menu">
+        <button id="refresh" class="button">refresh</button>
+        <div>
+          <input id="writer" class="input" type="text">
+          <button id="create" class="button">create</button>
+          <button id="download" class="button">download</button>
+          <button id="login" class="button">login</button>
+        </div>
+      </section>
+      <section id="content">
+        <table>
+          <thead>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <span onClick="((e) => alert('jsh'))()">It is ©2023 Created by JSH</span>
+  </footer>
+  <script defer src="https://apis.google.com/js/api.js">
+  </script>
+  <script defer src="https://accounts.google.com/gsi/client"></script>
+  <script defer type="module" src="./index.js">
+  </script>
+</body>
+
+</html>

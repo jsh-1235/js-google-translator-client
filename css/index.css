@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+@import "./components.css";
+@import "./header.css";
+@import "./main.css";
+
+:root {
+  --footer-hight: 48px;
+  --header-hight: calc(var(--footer-hight) * 2);
+
+  --font-size-title: 1.25rem;
+  --font-size-content: 1rem;
+  --font-size-footer: 0.5rem;
+  --font-size-th: 0.8rem;
+  --font-size-tr: 0.7rem;
+
+  --bg-color-header: #f5f5f5;
+  --bg-color-footer: #f5f5f5;
+  --bg-color-content: #fafafa;
+  --bg-color-menu: #efefef;
+  --bg-color-th: #efefef;
+  --bg-color-td: #fafafa;
+
+  --border-color-table: #bdbdbd;
+
+  --font-color-foreground: black;
+  --font-color-th: #1b1b1b;
+  --font-color-td: #1b1b1b;
+}
+
+* {
+  font-family: 'Nanum Gothic', sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: var(--header-hight);
+  background-color: var(--bg-color-header);
+  color: var(--font-color-foreground);
+  padding: 0px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0px 0px;
+  align-content: stretch;
+  justify-content: stretch;
+  align-items: stretch;
+  justify-items: stretch;
+  height: calc(100vh - var(--header-hight) - var(--footer-hight));
+  overflow: auto;
+}
+
+footer {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: var(--footer-hight);
+  bottom: 0;
+  left: 0;
+  background-color: var(--bg-color-footer);
+  color: var(--font-color-foreground);
+  font-size: var(--font-size-footer);
+  text-align: center;
+  padding: 0px;
+}
