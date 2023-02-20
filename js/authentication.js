@@ -51,11 +51,11 @@ export default class Authentication {
 
         document.getElementById("login").classList.add("logout");
         document.getElementById("login").innerText = "logout";
-
-        this.writer.getValues(undefined, "A1:Z100", (rows) => {
-          console.log(rows);
-        });
       }
+
+      this.writer.getValues(undefined, "A1:Z100", (rows) => {
+        console.log(rows);
+      });
     }
   }
 

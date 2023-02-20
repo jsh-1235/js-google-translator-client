@@ -14,7 +14,11 @@ window.addEventListener("load", (e) => {
 document.getElementById("create").addEventListener("click", (e) => {
   console.clear();
 
-  writer.create(e);
+  if (window.gapi.client.getToken()) {
+    writer.create(e);
+  } else {
+    alert("Login is required.");
+  }
 });
 
 document.getElementById("refresh").addEventListener("click", (e) => {

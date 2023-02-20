@@ -179,15 +179,43 @@ export default class Writer {
   }
 
   update(e, index) {
-    let target = prompt("Please Enter the text you want to change!", `${e.target.dataset.value}`);
+    if (window.gapi.client.getToken()) {
+      console.clear();
 
-    if (target != null) {
+      let target = prompt("Please Enter the text you want to change!", `${e.target.dataset.value}`);
+
+      if (target != null) {
+        e.target.setAttribute("disabled", "");
+
+        this.translator.apply(target, ["en", "zh", "ru"], (row) => {
+          console.log(row);
+
+          this.updateValues(undefined, `A${index}:D${index}`, "USER_ENTERED", [[row.kor, row.en, row.zh, row.ru]], (result) => {
+            console.log(result);
+
+            e.target.removeAttribute("disabled");
+
+            this.getValues(undefined, "A1:Z100", (rows) => {
+              console.log(rows);
+            });
+          });
+        });
+      }
+    } else {
+      alert("Login is required.");
+    }
+  }
+
+  remove(e, index) {
+    if (window.gapi.client.getToken()) {
+      console.clear();
+
       e.target.setAttribute("disabled", "");
 
-      this.translator.apply(target, ["en", "zh", "ru"], (row) => {
-        console.log(row);
+      const filtered = this.rows.filter((row, i) => i !== index);
 
-        this.updateValues(undefined, `A${index}:D${index}`, "USER_ENTERED", [[row.kor, row.en, row.zh, row.ru]], (result) => {
+      this.deleteValues(undefined, "A1:Z100", (result) => {
+        this.appendValues(undefined, "A1:Z100", "USER_ENTERED", filtered, (result) => {
           console.log(result);
 
           e.target.removeAttribute("disabled");
@@ -197,27 +225,9 @@ export default class Writer {
           });
         });
       });
+    } else {
+      alert("Login is required.");
     }
-  }
-
-  remove(e, index) {
-    console.clear();
-
-    e.target.setAttribute("disabled", "");
-
-    const filtered = this.rows.filter((row, i) => i !== index);
-
-    this.deleteValues(undefined, "A1:Z100", (result) => {
-      this.appendValues(undefined, "A1:Z100", "USER_ENTERED", filtered, (result) => {
-        console.log(result);
-
-        e.target.removeAttribute("disabled");
-
-        this.getValues(undefined, "A1:Z100", (rows) => {
-          console.log(rows);
-        });
-      });
-    });
   }
 
   createHeader(headers) {
