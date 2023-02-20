@@ -20,7 +20,10 @@ export default class Speaker {
       this.speech.rate = 1; // From 0.1 to 10
       this.speech.pitch = 1; // From 0 to 2
       this.speech.text = message;
-      this.speech.voice = window.speechSynthesis.getVoices()[0];
+
+      const voices = speechSynthesis.getVoices();
+      const voice = voices.find((voice) => voice.default);
+      this.speech.voice = voice;
 
       window.speechSynthesis.speak(this.speech);
     } else {

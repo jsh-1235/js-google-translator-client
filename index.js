@@ -36,3 +36,17 @@ document.getElementById("download").addEventListener("click", (e) => {
     downloader.save("result.csv", result);
   });
 });
+
+document.getElementById("clear").addEventListener("click", (e) => {
+  console.clear();
+
+  if (confirm("Are you sure you want to delete all data?") == true) {
+    writer.deleteValues(undefined, "A1:Z100", (result) => {
+      console.log(result);
+
+      writer.getValues(undefined, "A1:Z100", (rows) => {
+        console.log(rows);
+      });
+    });
+  }
+});

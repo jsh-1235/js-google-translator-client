@@ -61,17 +61,17 @@
 }
 
 .input:hover, textarea:hover {
-  outline: 1px solid #85bb5c;
+  outline: 1px solid #5eb8ff;
 }
 
 .input:focus, textarea:focus {
   transition-property: outline;
   transition-duration: 0.5s;
-  outline: 3px solid #85bb5c;
+  outline: 3px solid #0288d1;
 }
 
 .input:autofill, .input:-webkit-autofill {
   border: none;
-  -webkit-text-fill-color: #85bb5c;
+  -webkit-text-fill-color: #0288d1;
   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
 }

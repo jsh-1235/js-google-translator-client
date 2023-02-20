@@ -37,6 +37,7 @@ main {
   justify-self: stretch;
   padding: 10px;
   overflow: auto;
+  scroll-behavior: none;
   grid-template-rows: 1fr;
 }
 

@@ -48,6 +48,8 @@ export default class Writer {
             if (callback) callback(this.rows);
           } else {
             console.log("No values found.");
+
+            this.display(null);
           }
         });
     } catch (err) {
@@ -160,6 +162,10 @@ export default class Writer {
 
             this.getValues(undefined, "A1:Z100", (rows) => {
               console.log(rows);
+
+              document.getElementById("content").scrollTop = document.getElementById("content").scrollHeight;
+
+              console.log("scrollHeight", document.getElementById("content").scrollHeight);
             });
 
             input.removeAttribute("disabled");
@@ -260,28 +266,32 @@ export default class Writer {
   display(rows) {
     this.createHeader(["korea", "english", "china", "russia", "update", "delete"]);
 
-    this.createBody(rows);
+    if (rows) {
+      this.createBody(rows);
 
-    const elements = document.querySelector("tbody").childNodes;
+      const elements = document.querySelector("tbody").childNodes;
 
-    elements.forEach((element) => {
-      element.childNodes.forEach((target) => {
-        if (target.getElementsByTagName) {
-          target.addEventListener("click", (e) => {
-            if (e.target.dataset.lang) {
-              this.speaker.play(e.target.dataset.lang, e.target.innerText);
-            } else {
-              if (e.target.dataset.index) {
-                if (e.target.id === "update") {
-                  this.update(e, Number(e.target.dataset.index) + 1);
-                } else if (e.target.id === "delete") {
-                  this.remove(e, Number(e.target.dataset.index));
+      elements.forEach((element) => {
+        element.childNodes.forEach((target) => {
+          if (target.getElementsByTagName) {
+            target.addEventListener("click", (e) => {
+              if (e.target.dataset.lang) {
+                this.speaker.play(e.target.dataset.lang, e.target.innerText);
+              } else {
+                if (e.target.dataset.index) {
+                  if (e.target.id === "update") {
+                    this.update(e, Number(e.target.dataset.index) + 1);
+                  } else if (e.target.id === "delete") {
+                    this.remove(e, Number(e.target.dataset.index));
+                  }
                 }
               }
-            }
-          });
-        }
+            });
+          }
+        });
       });
-    });
+    } else {
+      document.querySelector("tbody").innerHTML = "";
+    }
   }
 }
