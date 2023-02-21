@@ -20,17 +20,26 @@
   margin: 0px;
 }
 
-.button:hover {
-  background-color: #5eb8ff;
-  cursor: pointer;
-  transition-property: background-color, cursor;
-  transition-duration: 0.5s;
+/* Touch screen devices that do support hovering */
+@media (hover: hover) {
+  .button:hover {
+    background-color: #5eb8ff;
+    cursor: pointer;
+    transition-property: background-color, cursor;
+    transition-duration: 0.5s;
+  }
+}
+
+/* Touch screen devices that do not support hovering */
+@media (hover: none) {
+  .button:hover {
+    background-color: #0288d1;
+    color: white;
+  }
 }
 
 .button:active {
   background-color: #005b9f;
-  transition-property: background-color, cursor;
-  transition-duration: 0.5s;
 }
 
 .button:disabled {

@@ -63,11 +63,20 @@ td {
   padding: 10px;
 }
 
-.cell:hover {
-  background-color: #5eb8ff;
-  color: white;
-  transition-property: background-color, color;
-  transition-duration: 0.5s;
+@media (hover: hover) {
+  .cell:hover {
+    background-color: #5eb8ff;
+    color: white;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+  }
+}
+
+@media (hover: none) {
+  .cell:hover {
+    background-color: inherit;
+    color: inherit;
+  }
 }
 
 .cell:active {
