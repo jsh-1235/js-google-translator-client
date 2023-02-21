@@ -65,7 +65,7 @@ td {
 
 @media (hover: hover) {
   .cell:hover {
-    background-color: #5eb8ff;
+    background-color: #ffc947;
     color: white;
     transition-property: background-color, color;
     transition-duration: 0.5s;
@@ -80,6 +80,6 @@ td {
 }
 
 .cell:active {
-  background-color: #005b9f;
+  background-color: #ff9800;
   color: white;
 }
