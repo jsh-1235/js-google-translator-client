@@ -7,17 +7,17 @@
     "utilities"
   ],
   "lang": "ko",
-  "prefer_related_applications": false,
+  "dir": "ltr",
+  "scope": "/",
+  "start_url": "/",
   "display": "fullscreen",
   "display_override": [
     "standalone"
   ],
+  "prefer_related_applications": false,
   "orientation": "portrait-primary",
-  "dir": "ltr",
-  "scope": "/",
-  "start_url": "/",
-  "background_color": "#ffffff",
   "theme_color": "#4d9935",
+  "background_color": "#ffffff",
   "screenshots": [
     {
       "src": "images/maskable_icon.png",
@@ -25,10 +25,24 @@
       "type": "image/png"
     }
   ],
+  "shortcuts": [
+    {
+      "name": "BT Inc",
+      "short_name": "BT",
+      "url": "/about.html",
+      "description": "My company",
+      "icons": [
+        {
+          "src": "images/maskable_icon_x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
   "icons": [
     {
       "src": "./favicomatic/favicon.ico",
-      "sizes": "32x32 16x16",
+      "sizes": "32x32",
       "type": "image/x-icon"
     },
     {
@@ -60,13 +74,6 @@
       "src": "images/maskable_icon_x512.png",
       "sizes": "512x512",
       "purpose": "maskable"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "BT Inc",
-      "url": "http://www.btinc.co.kr",
-      "description": "My company"
     }
   ]
 }
