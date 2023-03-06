@@ -1,0 +1,72 @@
+{
+  "name": "Translator App",
+  "short_name": "Translator",
+  "description": "Translation automation system using Google Translate API",
+  "categories": [
+    "education",
+    "utilities"
+  ],
+  "lang": "ko",
+  "prefer_related_applications": false,
+  "display": "fullscreen",
+  "display_override": [
+    "standalone"
+  ],
+  "orientation": "portrait-primary",
+  "dir": "ltr",
+  "scope": "/",
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#4d9935",
+  "screenshots": [
+    {
+      "src": "images/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "icons": [
+    {
+      "src": "./favicomatic/favicon.ico",
+      "sizes": "32x32 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "images/maskable_icon_x48.png",
+      "sizes": "48x48",
+      "purpose": "any"
+    },
+    {
+      "src": "images/maskable_icon_x72.png",
+      "sizes": "72x72",
+      "purpose": "any"
+    },
+    {
+      "src": "images/maskable_icon_x96.png",
+      "sizes": "96x96",
+      "purpose": "any"
+    },
+    {
+      "src": "images/maskable_icon_x128.png",
+      "sizes": "128x128",
+      "purpose": "any"
+    },
+    {
+      "src": "images/maskable_icon_x384.png",
+      "sizes": "384x384",
+      "purpose": "any"
+    },
+    {
+      "src": "images/maskable_icon_x512.png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "BT Inc",
+      "url": "http://www.btinc.co.kr",
+      "description": "My company"
+    }
+  ]
+}
